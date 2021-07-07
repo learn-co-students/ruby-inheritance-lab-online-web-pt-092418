@@ -12,9 +12,32 @@ avi = Teacher.new
 avi.first_name = "Avi"
 avi.last_name = "Flombaum"
 
+jim = Student.new
+jim.first_name = "jim"
+jim.last_name = "smith"
 
-some_knowledge = avi.teach 
+3.times do 
+  steve.learn(avi.teach)
+  puts "Steve just learned this important knowledge: '#{steve.knowledge.last}' from Avi"
+end 
 
-steve.learn(some_knowledge)
+jim.learn(avi.teach)
 
-puts "Steve just learned this important knowledge: '#{steve.knowledge.first}' from Avi"
+# puts "Steve has learned:"
+# steve.knowledge.each do |subject|
+#   puts subject 
+# end 
+
+# puts "Jim has learned:"
+# jim.knowledge.each do |subject|
+#   puts subject
+# end 
+
+[steve, jim].each do |student|
+    puts "#{student.first_name} has learned..."
+    student.knowledge.each { |k| puts k }
+end
+ 
+
+
+
